@@ -25,7 +25,7 @@ class EditExercise extends Component {
 
     componentDidMount(props) {
         console.log(this.props);
-        axios.get("http://localhost:5000/exercises/"+this.props.match.params.id)
+        axios.get("https://exercisetracker-202q.onrender.com/exercises/"+this.props.match.params.id)
         .then(response => {
             this.setState({
                 username: response.data.username,
@@ -39,7 +39,7 @@ class EditExercise extends Component {
         })
 
 
-        axios.get("http://localhost:5000/users/")
+        axios.get("https://exercisetracker-202q.onrender.com/users/")
         .then(response => {
             if (response.data.length > 0) {
                 this.setState({
@@ -88,7 +88,7 @@ class EditExercise extends Component {
 
         console.log(exercise);
 
-        axios.post("http://localhost:5000/exercises/update/"+this.props.match.params.id, exercise)
+        axios.post("https://exercisetracker-202q.onrender.com/exercises/update/"+this.props.match.params.id, exercise)
         .then(res => console.log(res.data))
         .catch((err) => {
             console.log(err);

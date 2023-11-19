@@ -24,7 +24,7 @@ class CreateExercise extends Component {
     }
 
     componentDidMount() {
-        axios.get("http://localhost:5000/users/")
+        axios.get("https://exercisetracker-202q.onrender.com/users/")
         .then(response => {
             if (response.data.length > 0) {
                 this.setState({
@@ -74,7 +74,7 @@ class CreateExercise extends Component {
 
         console.log(exercise);
 
-        axios.post("http://localhost:5000/exercises/add", exercise)
+        axios.post("https://exercisetracker-202q.onrender.com/exercises/add", exercise)
         .then(res => console.log(res))
         .catch((err) => {
             console.log(err);
