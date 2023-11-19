@@ -1,2 +1,2 @@
 # MERNProject
-A complete basic project based on mere stack
+A mini project to keep track of exercises.
