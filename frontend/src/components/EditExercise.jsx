@@ -1,7 +1,8 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import axios from 'axios';
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.module.css";
+import { useParams } from 'react-router-dom';
 
 class EditExercise extends Component {
     constructor(props) {
@@ -22,7 +23,7 @@ class EditExercise extends Component {
         };
     }
 
-    componentDidMount() {
+    componentDidMount(props) {
         console.log(this.props);
         axios.get("http://localhost:5000/exercises/"+this.props.match.params.id)
         .then(response => {
